@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Page</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #FFB703;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background-color: #FFB703;
+            margin: 10px auto 30px auto;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #FFB703;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .summary {
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            margin-bottom: 1in;
+        }
+
+        .contact-item {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .contact-item a {
+            color: #FFB703;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .section {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background-color: #FFB703;
+        }
+
+        .item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .item::before {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: #FFB703;
+            border-radius: 50%;
+        }
+
+        .item h3 {
+            font-size: 1.4em;
+            margin: 0;
+            color: #FFD54F;
+        }
+
+        .item span {
+            display: block;
+            font-size: 0.9em;
+            color: #aaa;
+            margin: 5px 0 10px;
+        }
+
+        .item p, .item ul {
+            margin: 0;
+            font-size: 1em;
+            color: #ddd;
+        }
+
+        .item ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .item ul li {
+            font-size: 0.95em;
+            color: #bbb;
+        }
+
+        .resume-box {
+            background-color: #444;
+            border: 2px solid #FFB703;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 50px auto;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .resume-box img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .resume-box img:hover {
+            transform: scale(1.1);
+        }
+
+        .resume-box p {
+            color: #FFD54F;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            color: #FFB703;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .skill-category {
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-category h3 {
+            font-size: 1.5em;
+            color: #FFB703;
+            margin-bottom: 10px;
+        }
+
+        .skill-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-icons img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-icons img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 8px rgba(255, 183, 3, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <h1>Resume</h1>
+    <div class="divider"></div>
+
+    <!-- Summary Section -->
+    <div class="section-title">Summary</div>
+    <p class="summary">
+        I am a Data Science professional with over 2 years of experience specializing in Machine Learning and Data Analysis. 
+        My expertise includes developing and deploying advanced ML models and data-driven solutions. I am actively seeking roles 
+        as a Machine Learning Engineer, Data Scientist, or Data Analyst to contribute my skills and make a measurable impact.
+    </p>
+
+    <div class="contact-info">
+        <div class="contact-item">📍 Location: San Francisco, CA</div>
+        <div class="contact-item">📧 <a href="mailto:kmunagal@usc.edu">kmunagal@usc.edu</a></div>
+        <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/karunya-m" target="_blank">LinkedIn</a></div>
+        <div class="contact-item">💻 <a href="https://github.com/karunyaMunagala12" target="_blank">GitHub</a></div>
+    </div>
+
+    <div class="resume-box">
+        <a href="https://drive.google.com/your-resume-link" target="_blank">
+            <img src="photos/Google_Drive_-_New_Logo.png" alt="Google Drive Resume">
+        </a>
+        <p>Click on the drive icon to unlock the "data treasure trove" (aka my resume)!</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Education Section -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="item">
+                <h3>Master of Science in Data Science</h3>
+                <span>University of Southern California | Jan 2023 - Dec 2024</span>
+                <p>GPA: 3.92/4.0 | Los Angeles, CA</p>
+                <ul>
+                    <li>Coursework: Machine Learning, Data Mining, Python Programming, Database Management</li>
+                </ul>
+            </div>
+            <div class="item">
+                <h3>Bachelor of Engineering with Honors</h3>
+                <span>Gokaraju Rangaraju Institute of Engineering & Technology | Aug 2018 - Jul 2022</span>
+                <p>GPA: 4.00/4.00 | Hyderabad, India</p>
+                <ul>
+                    <li>Coursework: Computer Networks, Data Structures, Neural Networks</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Professional Experience Section -->
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="item">
+                <h3>Machine Learning Scientist</h3>
+                <span>EntreVita | Aug 2024 - Dec 2024 | Michigan, MI</span>
+                <ul>
+                    <li>Architected and fine-tuned ML models using TensorFlow and Python, improving recommendation accuracy by 20%.</li>
+                    <li>Prototyped and deployed generative AI solutions with RAG techniques, boosting dietary plan effectiveness by 25%.</li>
+                    <li>Implemented transformer-based architectures and optimized pipelines, reducing preprocessing time by 30%.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <h3>Data Analyst Intern</h3>
+                <span>Dynamics eShop | May 2024 - Aug 2024 | Lake Forest, CA</span>
+                <ul>
+                    <li>Designed real-time dashboards in Power BI, improving decision-making efficiency by 30%.</li>
+                    <li>Analyzed transactional data with SQL and Python, driving a 20% increase in user engagement.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <h3>Machine Learning Engineer</h3>
+                <span>Tata Consultancy Services | Jul 2020 - Nov 2021 | Hyderabad, India</span>
+                <ul>
+                    <li>Engineered advanced ML algorithms, improving semiconductor yield prediction accuracy by 20%.</li>
+                    <li>Spearheaded production support for ASML’s ML pipeline, enhancing defect classification accuracy by 25%.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Volunteer Experience Section -->
+        <div class="section">
+            <h2 class="section-title">Volunteer Experience</h2>
+            <div class="item">
+                <h3>Women Techmaker Ambassador</h3>
+                <span>Google's Women Techmakers | Aug 2023 - Present</span>
+                <p>
+                    Associated with Google, the Women Techmaker Ambassador initiative empowers women in the technology field to make a positive difference within their communities. As an Ambassador, I actively contribute to leadership activities on a quarterly basis, connecting with a vibrant community and leveraging Google's support and resources.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Explore My Skills Section -->
+    <div class="skills-section">
+        <h2 class="section-title">Explore My Skills</h2>
+        <div class="skills-container">
+            <!-- Programming Languages -->
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-icons">
+                    <img src="photos/python.png" alt="Python" title="Python">
+                    <img src="photos/r.png" alt="R" title="R">
+                    <img src="photos/sql-server.png" alt="SQL" title="SQL">
+                    <img src="photos/html.png" alt="HTML" title="HTML">
+                    <img src="photos/java.png" alt="Java" title="Java">
+                </div>
+            </div>
+
+            <!-- Data Visualization -->
+            <div class="skill-category">
+                <h3>Data Visualization</h3>
+                <div class="skill-icons">
+                    <img src="photos/power-bi_logo.png" alt="Power BI" title="Power BI">
+                    <img src="photos/Tableau-Logo.jpg" alt="Tableau" title="Tableau">
+                    <img src="photos/excel.png" alt="Excel" title="Excel">
+                    <img src="photos/seaborn.png" alt="Seaborn" title="Seaborn">
+                    <img src="photos/ggplot.png" alt="ggplot2" title="ggplot2">
+                    <img src="photos/qlikview.png" alt="QlikView" title="QlikView">
+                </div>
+            </div>
+
+            <!-- Cloud and Tools -->
+            <div class="skill-category">
+                <h3>Cloud & Tools</h3>
+                <div class="skill-icons">
+                    <img src="photos/Amazon_Web_Services-Logo.wine.png" alt="AWS" title="AWS">
+                    <img src="photos/Docker-Symbol.png" alt="Docker" title="Docker">
+                    <img src="photos/PyCharm_Logo1.png" alt="PyCharm" title="PyCharm">
+                    <img src="photos/mongodb.png" alt="MongoDB" title="MongoDB">
+                </div>
+            </div>
+
+            <!-- Machine Learning & AI -->
+            <div class="skill-category">
+                <h3>Machine Learning & AI</h3>
+                <div class="skill-icons">
+                    <img src="photos/natural-language-processing.png" alt="NLP" title="Natural Language Processing">
+                    <img src="photos/ab-testing.png" alt="A/B Testing" title="A/B Testing">
+                    <img src="photos/pyspark.png" alt="PySpark" title="PySpark">
+                    <img src="photos/keras.png" alt="Keras" title="Keras">
+                    <img src="photos/huggingface.png" alt="Hugging Face" title="Hugging Face">
+                    <img src="photos/tensor.jpeg" alt="TensorFlow" title="TensorFlow">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Go Back to Home Link -->
+    <div class="back-link">
+        <a href="portfolio.html">Go Back to Home</a>
+    </div>
+</body>
+</html>
