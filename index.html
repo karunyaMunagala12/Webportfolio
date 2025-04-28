@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karunya Munagala - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 💥 Add this TOP-NAV css here */
+        .top-nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 12px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2000;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        .top-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .top-nav ul li a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .top-nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        header {
+            position: fixed;
+            top: 70px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            color: #FFB703;
+            margin: 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+            margin-right: 40px;
+        }
+
+        header nav ul li {
+            display: inline-block;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #E9E9E9;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #FFB703;
+        }
+
+        #animated-roles {
+            display: block;
+            font-size: 1.2em;
+            color: #FFB703;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .giphy-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        .hero img {
+            max-width: 500px;
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #FFB703;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5em;
+            margin: 0;
+            color: #F4F4F4;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #B4B4B4;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+        }
+
+        .social-links img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%; /* Optional for circular icons */
+            transition: transform 0.3s ease;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        #my-work {
+            background: url('photos/pink.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 60px 20px;
+            color: #fff;
+            min-height: 150vh; /* Increased height to fit all projects */
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project a {
+            color: #FFB703; /* Yellow */
+            text-decoration: none; /* Optional: Remove underline */
+        }
+
+        .project {
+            background: rgba(34, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project h3 {
+            color: #FFB703;
+        }
+
+        .github-icon img {
+            width: 25px;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #fff;
+        }
+
+        footer a {
+            color: #FFB703;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .project iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #FFB703;
+        }
+
+        #contact {
+            background: url('photos/black.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 60px 20px;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        #contact h2, #contact p {
+            color: #fff;
+        }
+
+        #contact form {
+            background: rgba(34, 34, 34, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 2px solid #FFB703;
+        }
+
+        #contact input,
+        #contact textarea,
+        #contact button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #contact button {
+            background: #FFB703;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #contact button:hover {
+            background: #E9A703;
+        }
+        
+
+        .floating-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #FFB703;
+        padding: 12px 15px;
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 3000;
+        transition: box-shadow 0.3s ease;
+        }
+
+       .floating-button:hover {
+        box-shadow: 0 0 15px 5px rgba(255, 183, 3, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <ul>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="resume.html" target="_blank">📄 Resume</a></li>
+          <li><a href="certificates.html" target="_blank">🎓 Certificates</a></li>
+          <li><a href="resources.html" target="_blank">📚 Resources</a></li>
+          <li><a href="#contact">✉️ Contact</a></li>
+        </ul>
+      </nav>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <iframe
+            src="https://giphy.com/embed/pdMIJPhoyCPCkT18x4"
+            class="giphy-background"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+        <div class="hero-content">
+
+            <img src="photos/IMG_0598.jpg" alt="Karunya Munagala">
+            <div class="hero-text">
+                <h1>Hello👋</h1>
+                <p>I’m a Data Scientist and Machine Learning Enthusiast with 2+ years of experience solving real-world problems using data and AI.</p>
+                <p>With expertise in NLP, data analysis, and predictive modeling, I thrive on creating data-driven solutions that empower businesses to make smarter, impactful decisions. Over the years, I’ve worked on projects that range from optimizing processes to uncovering insights that drive innovation.</p>
+                <p>From exploring the intricacies of algorithms to designing human-centered solutions, my mission is clear: to harness the power of AI to transform ideas into reality.</p>
+                <p>When I’m not coding, you’ll find me watching movies, exploring cozy cafés, or diving into sci-fi novels for inspiration.</p>
+                <p>Let’s connect and turn challenges into opportunities with the magic of AI! 🌟</p>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://github.com/karunyaMunagala12" target="_blank">
+                        <img src="photos/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/karunya-m/" target="_blank">
+                        <img src="photos/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="mailto:kmunagal@usc.edu">
+                        <img src="photos/communication.png" alt="Email">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Work Section -->
+    <section id="my-work">
+        <h2>My Work</h2>
+        <div class="projects-container">
+            
+            <!-- New NLP Log Classification Project (Added at the Start) -->
+
+
+            <div class="project">
+                <a href="https://github.com/karunyaMunagala12/Nlp-logclassification" target="_blank">
+                    <iframe src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXRvdjBzYXppMWc3M2o2NWx0N2s4c3J2N2lnM3ljMmoxY2N6OHZhMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/65n8RPEa3r65q/giphy.gif" 
+                            class="giphy-embed" 
+                            allowFullScreen>
+                    </iframe>
+                </a>
+                
+                <h3>Log Classification With Hybrid Classification Framework</h3>
+                <p>
+                    Developed a hybrid log classification system using Regex, ML, and LLMs to handle structured and complex log patterns.
+                    <br><a href="https://github.com/karunyaMunagala12/Nlp-logclassification" target="_blank"> Because logs don’t debug themselves!</a>
+                </p>
+                
+                <div class="github-icon">
+                    <a href="https://github.com/karunyaMunagala12/Nlp-logclassification" target="_blank">
+                        <img src="photos/github.png" alt="GitHub Icon">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Existing Project: Language Model Powered Chatbot (Shifted Down) -->
+            <div class="project">
+                <a href="https://github.com/karunyaMunagala12/Language-Model-Powered-Chatbot" target="_blank">
+                    <iframe src="https://giphy.com/embed/13YPREdAEAHpCoo1SA" class="giphy-embed" allowFullScreen></iframe>
+                </a>
+                <h3>Language Model Powered Chatbot</h3>
+                <p>
+                    Developed a chatbot using Python and Retrieval-Augmented Generation (RAG) for educational purposes.
+                    <br><a href="https://github.com/karunyaMunagala12/Language-Model-Powered-Chatbot" target="_blank">Who needs sleep when my bot can answer 24/7?</a>
+                </p>
+                <div class="github-icon">
+                    <a href="https://github.com/karunyaMunagala12/Language-Model-Powered-Chatbot" target="_blank">
+                        <img src="photos/github.png" alt="GitHub Icon">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Other existing projects remain the same but shifted down -->
+            <div class="project">
+                <a href="https://github.com/karunyaMunagala12/Search-Queries-Anomaly-Detection-" target="_blank">
+                    <iframe src="https://giphy.com/embed/WqM5uaPtzoZtIhHI2x" class="giphy-embed" allowFullScreen></iframe>
+                </a>
+                <h3>Search Queries Anomaly Detection</h3>
+                <p>
+                    Built an Isolation Forest model to detect anomalies in search queries.
+                    <br><a href="https://github.com/karunyaMunagala12/Search-Queries-Anomaly-Detection-" target="_blank">Spotting anomalies faster than a suspicious roommate!</a>
+                </p>
+                <div class="github-icon">
+                    <a href="https://github.com/karunyaMunagala12/Search-Queries-Anomaly-Detection-" target="_blank">
+                        <img src="photos/github.png" alt="GitHub Icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/karunyaMunagala12/Starbucks-Proximity-Loyalty" target="_blank">
+                    <iframe src="https://giphy.com/embed/2FazplK2PyGh3Rjby" class="giphy-embed" allowFullScreen></iframe>
+                </a>
+                <h3>Proximity and Starbucks Brand Loyalty</h3>
+                <p>
+                    Analyzed the influence of proximity on customer loyalty using statistical methods.
+                    <br><a href="https://github.com/karunyaMunagala12/Starbucks-Proximity-Loyalty" target="_blank">Proof that coffee lovers are loyal—mostly.</a>
+                </p>
+                <div class="github-icon">
+                    <a href="https://github.com/karunyaMunagala12/Starbucks-Proximity-Loyalty" target="_blank">
+                        <img src="photos/github.png" alt="GitHub Icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/karunyaMunagala12/Fashion-Recommendation-System-using-Image-Features" target="_blank">
+                    <iframe src="https://giphy.com/embed/3og0IMWtQ1fUzfrO48" class="giphy-embed" allowFullScreen></iframe>
+                </a>
+                <h3>Fashion Recommendation System</h3>
+                <p>
+                    Built a recommendation system using image features to provide fashion suggestions.
+                    <br><a href="https://github.com/karunyaMunagala12/Fashion-Recommendation-System-using-Image-Features" target="_blank">Recommending trends, one image at a time!</a>
+                </p>
+                <div class="github-icon">
+                    <a href="https://github.com/karunyaMunagala12/Fashion-Recommendation-System-using-Image-Features" target="_blank">
+                        <img src="photos/github.png" alt="GitHub Icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/karunyaMunagala12/App-Reviews-Sentiment-Analysis" target="_blank">
+                    <iframe src="https://giphy.com/embed/3og0ISkkN95PNIQHW8" class="giphy-embed" allowFullScreen></iframe>
+                </a>
+                <h3>App Reviews Sentiment Analysis</h3>
+                <p>
+                    Conducted sentiment analysis on app reviews to derive actionable insights.
+                    <br><a href="https://github.com/karunyaMunagala12/App-Reviews-Sentiment-Analysis" target="_blank">Decoding emotions, one review at a time!</a>
+                </p>
+                <div class="github-icon">
+                    <a href="https://github.com/karunyaMunagala12/App-Reviews-Sentiment-Analysis" target="_blank">
+                        <img src="photos/github.png" alt="GitHub Icon">
+                    </a>
+                </div>
+            </div>
+
+            <div class="project">
+                <a href="https://github.com/karunyaMunagala12/Cryptocurrency_Analysis" target="_blank">
+                    <iframe src="https://giphy.com/embed/Auhvsp2K3B8j0HiurA" class="giphy-embed" allowFullScreen></iframe>
+                </a>
+                <h3>Cryptocurrency Data Analysis</h3>
+                <p>
+                    Analyzed cryptocurrency data to uncover market trends and insights.
+                    <br><a href="https://github.com/karunyaMunagala12/Cryptocurrency_Analysis" target="_blank">Insights that matter in the crypto world.</a>
+                </p>
+                <div class="github-icon">
+                    <a href="https://github.com/karunyaMunagala12/Cryptocurrency_Analysis" target="_blank">
+                        <img src="photos/github.png" alt="GitHub Icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have a question or want to work together? Reach out below!</p>
+        <form action="https://formspree.io/f/mkggnzao" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Karunya Munagala</p>
+    </footer>
+
+    <!-- Floating Button for Resources -->
+    <div class="floating-button" onclick="toggleMorePopup()">📚</div>
+
+    <!-- Popup Content -->
+    <div id="morePopup" class="more-popup">
+        <a href="resources.html">Data Science Resources</a>
+    </div>
+
+    <!-- Include Typed.js for animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Typed("#animated-roles", {
+            strings: ["Machine Learning Engineer", "Data Scientist", "Data Analyst"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true,
+        });
+    });
+    </script>
+
+    <!-- JavaScript to Handle Popup -->
+    <script>
+    function toggleMorePopup() {
+        var popup = document.getElementById("morePopup");
+        popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+    </script>
+
+    <!-- JavaScript to Add Shadow to Navbar on Scroll -->
+    <script>
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.top-nav');
+        if (window.scrollY > 10) {
+            nav.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.5)';
+        } else {
+            nav.style.boxShadow = 'none';
+        }
+    });
+    </script>
+</body>
+</html>

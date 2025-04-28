@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources - Data Science & ML</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body#resources-page {
+      background: url('photos/black1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* Navbar */
+    .top-nav {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 12px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 2000;
+      border-bottom: 2px solid #FFD700;
+    }
+    .top-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .top-nav ul li {
+      display: inline-block;
+      margin: 0 20px;
+    }
+    .top-nav ul li a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .top-nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    header h1 {
+      text-align: center;
+      color: #FFD700;
+      margin-top: 100px; /* Extra space for navbar */
+      margin-bottom: 40px;
+    }
+
+    .intro-box, .quick-tips-box, .inspiration-corner, .my-journey-box {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid #FFD700;
+      margin: 50px 20px;
+    }
+
+    .intro-box h2, .quick-tips-box h3, .inspiration-corner h3, .my-journey-box h3 {
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+
+    .intro-box p, .inspiration-corner p, .my-journey-box p {
+      font-size: 1em;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .resource-section {
+      margin: 50px 0;
+    }
+
+    .resource-section h2 {
+      text-align: center;
+      color: #FFD700;
+      margin-bottom: 30px;
+      font-size: 1.8em;
+    }
+
+    .resource-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #FFD700;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 4px 20px rgba(255, 215, 0, 0.4);
+    }
+
+    .card a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .separator {
+      width: 60%;
+      margin: 40px auto;
+      border-top: 2px solid #FFD700;
+    }
+
+    .quick-tips-box ul.tips-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .quick-tips-box ul.tips-list li {
+      color: #ffffff;
+      font-size: 1.1em;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .quick-tips-box ul.tips-list li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .quick-tips-box ul.tips-list li:hover::before {
+      transform: scale(1.3);
+      color: #FFD700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background: #111;
+      border-top: 2px solid #FFD700;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body id="resources-page">
+
+<!-- Navigation Bar -->
+<nav class="top-nav">
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="certificates.html" target="_blank">🎓 Certificates</a></li>
+    <li><a href="resume.html" target="_blank">📄 Resume</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Data Science & ML Resources</h1>
+</header>
+
+<div class="intro-box">
+  <h2>Welcome, Data Explorer! 🚀</h2>
+  <p>
+    Your <strong>go-to hub</strong> for mastering <strong>Data Science</strong> and <strong>Machine Learning</strong>!  
+    Explore handpicked guides, interview tools, and practice materials. 🎯
+  </p>
+</div>
+
+<main>
+
+<!-- GitHub Section -->
+<section class="resource-section" id="github">
+  <h2>🔥 GitHub Repositories</h2>
+  <div class="resource-cards">
+    <div class="card"><a href="https://github.com/alirezadir/machine-learning-interviews" target="_blank">ML Interviews from MAANG</a></div>
+    <div class="card"><a href="https://github.com/Avik-Jain/100-Days-Of-ML-Code" target="_blank">100 Days of ML Code</a></div>
+    <div class="card"><a href="https://github.com/afshinea/stanford-cs-229-machine-learning" target="_blank">ML Cheat Sheets</a></div>
+    <div class="card"><a href="https://github.com/donnemartin/system-design-primer" target="_blank">System Design Primer</a></div>
+    <div class="card"><a href="https://github.com/TheAlgorithms/Python" target="_blank">Python Algorithm Repos</a></div>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- Quick Tips -->
+<div class="quick-tips-box">
+  <h3>💡 Quick Tips for Success</h3>
+  <ul class="tips-list">
+    <li>Practice daily, even 20 minutes matters!</li>
+    <li>Believe in small consistent steps.</li>
+    <li>Document your wins, big or small.</li>
+    <li>Stay curious — always ask "what if?"</li>
+    <li>Run your race. Comparison steals joy!</li>
+  </ul>
+</div>
+
+<div class="separator"></div>
+
+<!-- Python Section -->
+<section class="resource-section" id="python">
+  <h2>🐍 Python Learning Resources</h2>
+  <div class="resource-cards">
+    <div class="card"><a href="https://www.pythonlikeyoumeanit.com/index.html" target="_blank">Python Like You Mean It</a></div>
+    <div class="card"><a href="https://realpython.com/" target="_blank">Real Python Tutorials</a></div>
+    <div class="card"><a href="https://www.geeksforgeeks.org/python-programming-language/" target="_blank">Python GeeksforGeeks</a></div>
+    <div class="card"><a href="https://www.w3schools.com/python/" target="_blank">W3Schools Python</a></div>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- Inspiration -->
+<div class="inspiration-corner">
+  <h3>🌟 Inspiration Corner 🌟</h3>
+  <p>
+    ✨ Coffee fuels ideas. <br>
+    ✨ Music sparks creativity. <br>
+    ✨ Walks solve tough problems. <br>
+    ✨ Dream boldly. Stay grounded. <br>
+    ✨ Keep laughing. You're doing better than you think.
+  </p>
+</div>
+
+<div class="separator"></div>
+
+<!-- SQL Section -->
+<section class="resource-section" id="sql">
+  <h2>📊 SQL Learning & Practice</h2>
+  <div class="resource-cards">
+    <div class="card"><a href="https://www.sql-practice.com/" target="_blank">SQL Practice Problems</a></div>
+    <div class="card"><a href="https://datalemur.com/sql-tutorial" target="_blank">DataLemur SQL Tutorials</a></div>
+    <div class="card"><a href="https://leetcode.com/problemset/database/" target="_blank">LeetCode SQL Problems</a></div>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- ML Section -->
+<section class="resource-section" id="ml">
+  <h2>🧠 Machine Learning & AI Resources</h2>
+  <div class="resource-cards">
+    <div class="card"><a href="https://developers.google.com/machine-learning/crash-course" target="_blank">Google ML Crash Course</a></div>
+    <div class="card"><a href="https://www.cheatsheets.aqeel-anwar.com" target="_blank">ML Cheat Sheets</a></div>
+    <div class="card"><a href="https://www.youtube.com/c/StatQuest" target="_blank">StatQuest (YouTube)</a></div>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- Interview Section -->
+<section class="resource-section" id="interview">
+  <h2>📝 Interview Preparation Tools</h2>
+  <div class="resource-cards">
+    <div class="card"><a href="https://grow.google/certificates/interview-warmup/" target="_blank">Google Interview Warmup</a></div>
+    <div class="card"><a href="https://www.pramp.com/" target="_blank">Pramp Mock Interviews</a></div>
+    <div class="card"><a href="https://www.linkedin.com/interview-prep/" target="_blank">LinkedIn Interview Prep</a></div>
+    <div class="card"><a href="https://biginterview.com/" target="_blank">Big Interview Platform</a></div>
+    <div class="card"><a href="https://www.glassdoor.com/" target="_blank">Glassdoor Company Reviews</a></div>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- Downloads Section -->
+<section class="resource-section" id="downloads">
+  <h2>📥 Download All Cheat Sheets</h2>
+  <div class="resource-cards">
+    <div class="card">
+      <a href="https://drive.google.com/drive/folders/12xd151lr0Gf98PH2tKtVzDDDbEFmUGgA?usp=sharing" target="_blank">
+        📂 Access Full Data Science & ML Resource Pack
+      </a>
+      <p style="margin-top:10px; color: #ccc;">Statistics, ML, SQL, and more — all in one folder!</p>
+    </div>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- My Journey -->
+<div class="my-journey-box">
+  <h3>🚀 My Journey: From Zero to Data Explorer</h3>
+  <p>
+    I stood at a crossroads — an Electrical Engineering graduate with no coding skills, no Python, no SQL.<br><br>
+    I wasn’t a "natural" programmer. I started with fear and YouTube tutorials.<br><br>
+    Step by tiny step, I learned to code, build models, and even design websites like this.<br><br>
+    <strong>If I can start scared and still build a new future — you can too.</strong><br><br>
+    Dream boldly. Start small. Stay consistent. 🌟
+  </p>
+</div>
+
+</main>
+
+<footer>
+  <p>&copy; 2024 Karunya Munagala</p>
+</footer>
+
+</body>
+</html>
